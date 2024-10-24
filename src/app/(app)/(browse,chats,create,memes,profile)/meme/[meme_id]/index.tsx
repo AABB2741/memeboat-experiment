@@ -1,12 +1,6 @@
 import { useLocalSearchParams } from "expo-router";
 
-import { MemeAuthor } from "./components/meme-author";
-import { MemeInteractions } from "./components/meme-interactions";
-import { MemeReactions } from "./components/meme-reactions";
-import { MemeSources } from "./components/meme-sources";
-
-import { MemeContent } from "./components/meme-content";
-import { Container, Group } from "./styles";
+import { Meme } from "@/components/meme";
 
 type Params = {
   meme_id: string;
@@ -15,19 +9,5 @@ type Params = {
 export default function MemePage() {
   const { meme_id } = useLocalSearchParams<Params>();
 
-  return (
-    <Container>
-      <Group>
-        <MemeAuthor />
-      </Group>
-
-      <MemeContent />
-
-      <Group>
-        <MemeSources />
-        <MemeReactions />
-        <MemeInteractions />
-      </Group>
-    </Container>
-  );
+  return <Meme.Page />;
 }

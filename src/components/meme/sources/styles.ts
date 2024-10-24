@@ -33,6 +33,7 @@ export const SourceName = styled.Text.attrs({
   `}
 
   transform: translateY(-1px);
+  flex: 1;
 `;
 
 export const MusicSourceIcon = styled(Music2).attrs(({ theme }) => ({

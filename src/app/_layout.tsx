@@ -8,6 +8,7 @@ import { ThemeProvider } from "styled-components/native";
 import { defaultTheme } from "@/styles/theme";
 import { Slot } from "expo-router";
 import { ActivityIndicator, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -24,8 +25,10 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Slot />
-    </ThemeProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider theme={defaultTheme}>
+        <Slot />
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }
