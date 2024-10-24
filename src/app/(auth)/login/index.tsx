@@ -44,7 +44,7 @@ export default function LoginPage() {
         </TouchableOpacity>
       </Link>
 
-      <Button.Container variant="accent" size="large" onPress={handleLogin}>
+      <Button.Container variant="highlight" size="large" onPress={handleLogin}>
         <Button.Text>Fazer login</Button.Text>
       </Button.Container>
 

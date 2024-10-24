@@ -30,7 +30,6 @@ export default function AppLayout() {
       <Tabs.Screen
         name="(memes)"
         options={{
-          headerShown: false,
           tabBarLabel: "Memes",
           tabBarIcon: ({ color, size }) => <Smile color={color} size={size} />,
         }}

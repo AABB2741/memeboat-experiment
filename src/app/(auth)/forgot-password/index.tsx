@@ -22,7 +22,7 @@ export default function LoginPage() {
         <Form.Input placeholder="joao@zinoh.com" icon={Mail} />
       </Form.Field>
 
-      <Button.Container variant="accent" size="large">
+      <Button.Container variant="highlight" size="large">
         <Button.Text>Recuperar conta</Button.Text>
       </Button.Container>
 

@@ -36,7 +36,7 @@ export default function LoginPage() {
         <Form.Input placeholder="1234" secureTextEntry />
       </Form.Field>
 
-      <Button.Container variant="accent" size="large">
+      <Button.Container variant="highlight" size="large">
         <Button.Text>Criar sua conta</Button.Text>
       </Button.Container>
 
