@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components/native";
 
-export const StyledSocialLoginButton = styled.TouchableOpacity`
+export const StyledSocialLoginButton = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7,
+})`
   ${({ theme }) => css`
     background-color: ${theme.colors.bg.secondary};
     border: 1px solid ${theme.colors.border.primary};

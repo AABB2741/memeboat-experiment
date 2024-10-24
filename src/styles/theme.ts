@@ -3,12 +3,14 @@ export const defaultTheme = {
     bg: {
       primary: "#18181B",
       secondary: "#09090B",
+      active: "#F3F4F6",
     },
     fg: {
       primary: "#F3F4F6",
       secondary: "#D4D4D8",
       placeholder: "#71717A",
       onAccent: "#000000",
+      onActive: "#000000",
     },
     border: {
       primary: "#3F3F46",

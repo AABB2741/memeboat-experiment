@@ -19,18 +19,27 @@ const containerVariants = {
         background-color: ${theme.colors.accent};
       `};
     `,
+    active: css`
+      ${({ theme }) => css`
+        background-color: ${theme.colors.bg.active};
+      `};
+    `,
   },
   size: {
     small: css`
       padding: 4px 8px;
       gap: 6px;
     `,
-    base: css``,
+    base: css`
+      padding: 8px 12px;
+      gap: 8px;
+    `,
     large: css`
       padding: 16px;
+      gap: 12px;
     `,
   },
-} as const;
+};
 
 export const StyledButtonContainer = styled.TouchableOpacity.attrs<StyledButtonContainerProps>(
   {

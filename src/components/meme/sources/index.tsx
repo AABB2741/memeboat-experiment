@@ -6,18 +6,36 @@ import {
   SourceName,
 } from "./styles";
 
-export function MemeSources() {
+export interface MemeSourcesProps {
+  music: {
+    id: string;
+    name: string;
+    artist: string;
+  } | null;
+  baseMeme: {
+    id: string;
+    title: string | null;
+  } | null;
+}
+
+export function MemeSources({ music, baseMeme }: MemeSourcesProps) {
   return (
     <Container>
-      <SourceButton>
-        <MusicSourceIcon />
-        <SourceName>Bohemian Rhapsody - Queen</SourceName>
-      </SourceButton>
+      {music && (
+        <SourceButton>
+          <MusicSourceIcon />
+          <SourceName>
+            {music.name} - {music.artist}
+          </SourceName>
+        </SourceButton>
+      )}
 
-      <SourceButton>
-        <MemeBaseSourceIcon />
-        <SourceName>Cara muito loko com a cabeça na mão lkkkkkk</SourceName>
-      </SourceButton>
+      {baseMeme && (
+        <SourceButton>
+          <MemeBaseSourceIcon />
+          <SourceName>{baseMeme.title ?? baseMeme.id}</SourceName>
+        </SourceButton>
+      )}
     </Container>
   );
 }

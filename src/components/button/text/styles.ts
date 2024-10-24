@@ -5,32 +5,37 @@ const buttonTextVariants = {
   size: {
     small: css`
       ${({ theme }) => css`
+        font-family: ${theme.font.family.regular};
         font-size: ${theme.font.size.sm}px;
       `};
     `,
     base: css`
       ${({ theme }) => css`
+        font-family: ${theme.font.family.regular};
         font-size: ${theme.font.size.base}px;
       `};
     `,
     large: css`
       ${({ theme }) => css`
         font-size: ${theme.font.size.lg}px;
+        font-family: ${theme.font.family.bold};
       `};
     `,
   },
   variant: {
     normal: css`
       ${({ theme }) => css`
-        font-family: ${theme.font.family.regular};
         color: ${theme.colors.fg.primary};
       `};
     `,
     highlight: css`
       ${({ theme }) => css`
-        font-family: ${theme.font.family.bold};
-
         color: ${theme.colors.fg.onAccent};
+      `};
+    `,
+    active: css`
+      ${({ theme }) => css`
+        color: ${theme.colors.fg.onActive};
       `};
     `,
   },

@@ -3,7 +3,7 @@ import type { TouchableOpacityProps } from "react-native";
 
 import { StyledButtonContainer } from "./styles";
 
-export type ButtonVariant = "normal" | "highlight";
+export type ButtonVariant = "normal" | "highlight" | "active";
 
 export type ButtonSize = "small" | "base" | "large";
 

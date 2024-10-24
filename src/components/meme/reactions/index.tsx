@@ -2,18 +2,47 @@ import { Container, ReactionText } from "./styles";
 
 import { UserAvatarStack } from "@/components/user-avatar-stack";
 
-import avatarImage2 from "@/assets/avatar-2.jpg";
-import avatarImage3 from "@/assets/avatar-3.jpg";
-import avatarImage from "@/assets/avatar.jpg";
+export interface MemeReactionsProps {
+  followingUsersReactions: {
+    id: string;
+    name: string;
+    avatarUrl: string;
+  }[];
+  reactionsCount: number;
+}
 
-export function MemeReactions() {
+function toReadableNumber(number: number) {
+  return Intl.NumberFormat("pt-BR", {
+    notation: "compact",
+    maximumFractionDigits: 1,
+  }).format(number);
+}
+
+export function MemeReactions({
+  followingUsersReactions,
+  reactionsCount,
+}: MemeReactionsProps) {
   return (
     <Container>
-      <UserAvatarStack
-        avatarSources={[avatarImage, avatarImage2, avatarImage3]}
-      />
-
-      <ReactionText>joao e +5 mil pessoas reagiram</ReactionText>
+      {followingUsersReactions.length > 0 ? (
+        <>
+          <UserAvatarStack
+            avatarSources={followingUsersReactions
+              .slice(0, 3)
+              .map((followingUser) => ({
+                uri: followingUser.avatarUrl,
+              }))}
+          />
+          <ReactionText>
+            {followingUsersReactions[0].name} e +
+            {toReadableNumber(reactionsCount)} pessoas reagiram
+          </ReactionText>
+        </>
+      ) : (
+        <ReactionText>
+          {toReadableNumber(reactionsCount)} pessoas reagiram
+        </ReactionText>
+      )}
     </Container>
   );
 }
