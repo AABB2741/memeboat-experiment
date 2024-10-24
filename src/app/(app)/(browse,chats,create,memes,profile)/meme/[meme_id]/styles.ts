@@ -6,5 +6,9 @@ export const Container = styled.View`
   `};
 
   flex: 1;
+  justify-content: space-between;
+`;
+
+export const Group = styled.View`
   gap: 24px;
 `;

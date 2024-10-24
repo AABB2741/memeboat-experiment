@@ -6,7 +6,7 @@ import { MemeReactions } from "./components/meme-reactions";
 import { MemeSources } from "./components/meme-sources";
 
 import { MemeContent } from "./components/meme-content";
-import { Container } from "./styles";
+import { Container, Group } from "./styles";
 
 type Params = {
   meme_id: string;
@@ -17,13 +17,17 @@ export default function MemePage() {
 
   return (
     <Container>
-      <MemeAuthor />
+      <Group>
+        <MemeAuthor />
+      </Group>
 
       <MemeContent />
 
-      <MemeSources />
-      <MemeReactions />
-      <MemeInteractions />
+      <Group>
+        <MemeSources />
+        <MemeReactions />
+        <MemeInteractions />
+      </Group>
     </Container>
   );
 }
