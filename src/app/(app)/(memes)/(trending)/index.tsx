@@ -13,6 +13,7 @@ type FeedItem = TrendingMeme;
 export default function TrendingMemesPage() {
   const { width } = useWindowDimensions();
 
+  const [currentFeedIndex, setCurrentFeedIndex] = useState(0);
   const [feed, setFeed] = useState<FeedItem[]>([]);
   console.log(
     "feed",
@@ -32,6 +33,8 @@ export default function TrendingMemesPage() {
     loadMoreMemes();
   }, []);
 
+  console.log("renderizando feed no index", currentFeedIndex);
+
   return (
     <Container>
       <FlatList
@@ -44,18 +47,34 @@ export default function TrendingMemesPage() {
               baseMeme: item.baseMeme,
             }}
             author={item.author}
-            content={item.content}
+            content={{
+              ...item.content,
+              title: item.id,
+            }}
             reactions={{
               followingUsersReactions: item.followingUsersReactions,
               reactionsCount: item.likesCount + item.dislikesCount,
             }}
+            interactions={{
+              likesCount: item.likesCount,
+              dislikesCount: item.dislikesCount,
+              commentsCount: item.commentsCount,
+            }}
             style={{ width }}
           />
         )}
+        initialScrollIndex={currentFeedIndex}
+        onMomentumScrollEnd={(e) => {
+          const index = Math.floor(
+            e.nativeEvent.contentOffset.x /
+              e.nativeEvent.layoutMeasurement.width,
+          );
+          setCurrentFeedIndex(index);
+        }}
         horizontal
         showsHorizontalScrollIndicator={false}
         pagingEnabled
-        onEndReachedThreshold={1}
+        onEndReachedThreshold={0.5}
         onEndReached={() => {
           console.log("fim chegado");
           loadMoreMemes();

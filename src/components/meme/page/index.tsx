@@ -1,9 +1,10 @@
 import type { ViewProps } from "react-native";
+
 import { MemeAuthor, type MemeAuthorProps } from "../author";
 import { MemeContainer } from "../container";
 import { MemeContent, type MemeContentProps } from "../content";
 import { MemeGroup } from "../group";
-import { MemeInteractions } from "../interactions";
+import { MemeInteractions, type MemeInteractionsProps } from "../interactions";
 import { MemeReactions, type MemeReactionsProps } from "../reactions";
 import { MemeSources, type MemeSourcesProps } from "../sources";
 
@@ -12,6 +13,7 @@ interface MemePageProps extends ViewProps {
   content: MemeContentProps;
   sources: MemeSourcesProps;
   reactions: MemeReactionsProps;
+  interactions: MemeInteractionsProps;
 }
 
 /**
@@ -22,6 +24,7 @@ export function MemePage({
   content,
   sources,
   reactions,
+  interactions,
   ...rest
 }: MemePageProps) {
   return (
@@ -35,7 +38,7 @@ export function MemePage({
       <MemeGroup>
         <MemeSources {...sources} />
         <MemeReactions {...reactions} />
-        <MemeInteractions />
+        <MemeInteractions {...interactions} />
       </MemeGroup>
     </MemeContainer>
   );

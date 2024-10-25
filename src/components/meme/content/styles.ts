@@ -1,6 +1,7 @@
+import Animated from "react-native-reanimated";
 import styled from "styled-components/native";
 
-export const Container = styled.ScrollView.attrs({
+export const Container = styled(Animated.ScrollView).attrs({
   contentContainerStyle: {
     justifyContent: "center",
     alignItems: "center",

@@ -1,5 +1,7 @@
 import { Container, ReactionText } from "./styles";
 
+import { beautifyNumber } from "@/utils/beautify-number";
+
 import { UserAvatarStack } from "@/components/user-avatar-stack";
 
 export interface MemeReactionsProps {
@@ -9,13 +11,6 @@ export interface MemeReactionsProps {
     avatarUrl: string;
   }[];
   reactionsCount: number;
-}
-
-function toReadableNumber(number: number) {
-  return Intl.NumberFormat("pt-BR", {
-    notation: "compact",
-    maximumFractionDigits: 1,
-  }).format(number);
 }
 
 export function MemeReactions({
@@ -35,12 +30,12 @@ export function MemeReactions({
           />
           <ReactionText>
             {followingUsersReactions[0].name} e +
-            {toReadableNumber(reactionsCount)} pessoas reagiram
+            {beautifyNumber(reactionsCount)} pessoas reagiram
           </ReactionText>
         </>
       ) : (
         <ReactionText>
-          {toReadableNumber(reactionsCount)} pessoas reagiram
+          {beautifyNumber(reactionsCount)} pessoas reagiram
         </ReactionText>
       )}
     </Container>

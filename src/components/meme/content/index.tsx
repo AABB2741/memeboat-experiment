@@ -5,9 +5,11 @@ import { Container, MemeImage } from "./styles";
 // import memeImage from "@/assets/meme.jpg";
 // import memeImage from "@/assets/meme-2.jpg";
 import { resize } from "@/utils/resize";
-import { Image, useWindowDimensions } from "react-native";
+import { Image, Text, useWindowDimensions } from "react-native";
 
-export type MemeContentProps = MemeContentSchema;
+export type MemeContentProps = MemeContentSchema & {
+  title: string | null;
+};
 
 type Dimension = {
   width: number;
@@ -55,6 +57,7 @@ export const MemeContent = memo((props: MemeContentProps) => {
             height: newHeight,
           }}
         />
+        {props.title && <Text style={{ color: "white" }}>{props.title}</Text>}
       </Container>
     );
   }
