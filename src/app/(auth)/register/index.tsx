@@ -1,12 +1,19 @@
-import { Button } from "@/components/button";
-import { Form } from "@/components/form";
+import { Link } from "expo-router";
 import { AtSign, Mail } from "lucide-react-native";
 import { TouchableOpacity } from "react-native";
-import { Description, Header, SwitchFormText, Title } from "./styles";
+
+import { Button } from "@/components/button";
+import { Form } from "@/components/form";
+import { SocialLoginButton } from "@/components/social-login-button";
+
+import {
+  Description,
+  Header,
+  SwitchFormText,
+  Title,
+} from "@/styles/auth/register.styles";
 
 import googleLogo from "@/assets/google-logo.jpg";
-import { SocialLoginButton } from "@/components/social-login-button";
-import { Link } from "expo-router";
 
 export default function LoginPage() {
   return (

@@ -6,7 +6,8 @@ import {
   type TrendingMeme,
 } from "@/api/fetch-trending-memes";
 import { Meme } from "@/components/meme";
-import { Container } from "./styles";
+
+import { Container } from "@/styles/app/memes/trending.styles";
 
 type FeedItem = TrendingMeme;
 
