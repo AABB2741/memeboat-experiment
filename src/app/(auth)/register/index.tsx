@@ -1,5 +1,6 @@
 import { Link } from "expo-router";
-import { AtSign, Mail } from "lucide-react-native";
+import { AtSign, Eye, EyeOff, Mail } from "lucide-react-native";
+import { useState } from "react";
 import { TouchableOpacity } from "react-native";
 
 import { Button } from "@/components/button";
@@ -16,6 +17,8 @@ import {
 import googleLogo from "@/assets/google-logo.jpg";
 
 export default function LoginPage() {
+  const [arePasswordsVisible, setArePasswordsVisible] = useState(false);
+
   return (
     <>
       <Header>
@@ -35,12 +38,32 @@ export default function LoginPage() {
 
       <Form.Field>
         <Form.Label>Sua senha</Form.Label>
-        <Form.Input placeholder="1234" secureTextEntry />
+        <Form.Input
+          placeholder="1234"
+          secureTextEntry={!arePasswordsVisible}
+          options={[
+            {
+              icon: arePasswordsVisible ? EyeOff : Eye,
+              key: "toggle-visibility",
+              onPress: () => setArePasswordsVisible((prevState) => !prevState),
+            },
+          ]}
+        />
       </Form.Field>
 
       <Form.Field>
         <Form.Label>Confirme sua senha</Form.Label>
-        <Form.Input placeholder="1234" secureTextEntry />
+        <Form.Input
+          placeholder="1234"
+          secureTextEntry={!arePasswordsVisible}
+          options={[
+            {
+              icon: arePasswordsVisible ? EyeOff : Eye,
+              key: "toggle-visibility",
+              onPress: () => setArePasswordsVisible((prevState) => !prevState),
+            },
+          ]}
+        />
       </Form.Field>
 
       <Button.Container variant="highlight" size="large">
