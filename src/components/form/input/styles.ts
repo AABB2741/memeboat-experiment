@@ -33,3 +33,16 @@ export const Input = styled.TextInput.attrs(({ theme }) => ({
   flex: 1;
   padding: 8px 12px;
 `;
+
+export const InputOptionsContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding-right: 4px;
+`;
+
+export const InputOption = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+`;

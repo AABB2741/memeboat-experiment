@@ -1,8 +1,15 @@
-import { Button } from "@/components/button";
-import { Form } from "@/components/form";
 import { Mail } from "lucide-react-native";
 import { TouchableOpacity } from "react-native";
-import { Description, Header, SwitchFormText, Title } from "./styles";
+
+import { Button } from "@/components/button";
+import { Form } from "@/components/form";
+
+import {
+  Description,
+  Header,
+  SwitchFormText,
+  Title,
+} from "@/features/auth/styles/forgot-password";
 
 import { Link } from "expo-router";
 

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, useWindowDimensions } from "react-native";
 
+import { Meme } from "@/components/meme";
 import {
   fetchTrendingMemes,
   type TrendingMeme,
-} from "@/api/fetch-trending-memes";
-import { Meme } from "@/components/meme";
-import { Container } from "./styles";
+} from "@/features/app/memes/api/fetch-trending-memes";
+
+import { Container } from "@/features/app/memes/trending.styles";
 
 type FeedItem = TrendingMeme;
 

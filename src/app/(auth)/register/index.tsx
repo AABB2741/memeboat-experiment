@@ -1,14 +1,24 @@
+import { Link } from "expo-router";
+import { AtSign, Eye, EyeOff, Mail } from "lucide-react-native";
+import { useState } from "react";
+import { TouchableOpacity } from "react-native";
+
 import { Button } from "@/components/button";
 import { Form } from "@/components/form";
-import { AtSign, Mail } from "lucide-react-native";
-import { TouchableOpacity } from "react-native";
-import { Description, Header, SwitchFormText, Title } from "./styles";
+import { SocialLoginButton } from "@/components/social-login-button";
+
+import {
+  Description,
+  Header,
+  SwitchFormText,
+  Title,
+} from "@/features/auth/styles/register";
 
 import googleLogo from "@/assets/google-logo.jpg";
-import { SocialLoginButton } from "@/components/social-login-button";
-import { Link } from "expo-router";
 
 export default function LoginPage() {
+  const [arePasswordsVisible, setArePasswordsVisible] = useState(false);
+
   return (
     <>
       <Header>
@@ -28,12 +38,32 @@ export default function LoginPage() {
 
       <Form.Field>
         <Form.Label>Sua senha</Form.Label>
-        <Form.Input placeholder="1234" secureTextEntry />
+        <Form.Input
+          placeholder="1234"
+          secureTextEntry={!arePasswordsVisible}
+          options={[
+            {
+              icon: arePasswordsVisible ? EyeOff : Eye,
+              key: "toggle-visibility",
+              onPress: () => setArePasswordsVisible((prevState) => !prevState),
+            },
+          ]}
+        />
       </Form.Field>
 
       <Form.Field>
         <Form.Label>Confirme sua senha</Form.Label>
-        <Form.Input placeholder="1234" secureTextEntry />
+        <Form.Input
+          placeholder="1234"
+          secureTextEntry={!arePasswordsVisible}
+          options={[
+            {
+              icon: arePasswordsVisible ? EyeOff : Eye,
+              key: "toggle-visibility",
+              onPress: () => setArePasswordsVisible((prevState) => !prevState),
+            },
+          ]}
+        />
       </Form.Field>
 
       <Button.Container variant="highlight" size="large">

@@ -1,20 +1,25 @@
+import { Link, router } from "expo-router";
+import { AtSign, Eye, EyeOff } from "lucide-react-native";
+import { useState } from "react";
+import { TouchableOpacity } from "react-native";
+
+import googleLogo from "@/assets/google-logo.jpg";
 import { Button } from "@/components/button";
 import { Form } from "@/components/form";
-import { AtSign } from "lucide-react-native";
-import { TouchableOpacity } from "react-native";
+
+import { SocialLoginButton } from "@/components/social-login-button";
+
 import {
   Description,
   ForgotPasswordText,
   Header,
   SwitchFormText,
   Title,
-} from "./styles";
-
-import googleLogo from "@/assets/google-logo.jpg";
-import { Link, router } from "expo-router";
-import { SocialLoginButton } from "../../../components/social-login-button";
+} from "@/features/auth/styles/login";
 
 export default function LoginPage() {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
   function handleLogin() {
     router.replace("/(app)/(memes)");
   }
@@ -35,7 +40,17 @@ export default function LoginPage() {
 
       <Form.Field>
         <Form.Label>Sua senha</Form.Label>
-        <Form.Input placeholder="1234" secureTextEntry />
+        <Form.Input
+          placeholder="1234"
+          secureTextEntry={!isPasswordVisible}
+          options={[
+            {
+              icon: isPasswordVisible ? EyeOff : Eye,
+              key: "toggle-visibility",
+              onPress: () => setIsPasswordVisible((prevState) => !prevState),
+            },
+          ]}
+        />
       </Form.Field>
 
       <Link href="/forgot-password" replace asChild>

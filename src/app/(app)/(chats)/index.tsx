@@ -1,5 +1,6 @@
 import { Text } from "react-native";
-import { Container } from "./styles";
+
+import { Container } from "@/features/app/chats/styles";
 
 export default function ChatsPage() {
   return (

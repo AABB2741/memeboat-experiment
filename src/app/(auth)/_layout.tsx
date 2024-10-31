@@ -1,9 +1,9 @@
 import { Slot } from "expo-router";
+import React from "react";
 
-import { FormContainer, LayoutContainer } from "./styles";
+import { FormContainer, LayoutContainer } from "@/features/auth/styles/layout";
 
 import authBackground from "@/assets/auth-background.jpg";
-import React from "react";
 
 export default function AuthLayout() {
   return (

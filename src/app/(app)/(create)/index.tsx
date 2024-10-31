@@ -1,5 +1,6 @@
 import { Text } from "react-native";
-import { Container } from "./styles";
+
+import { Container } from "@/features/app/create/styles";
 
 export default function CreatePage() {
   return (
