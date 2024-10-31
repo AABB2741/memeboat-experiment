@@ -14,7 +14,7 @@ import {
   Header,
   SwitchFormText,
   Title,
-} from "@/styles/auth/login.styles";
+} from "@/features/auth/styles/login";
 
 export default function LoginPage() {
   function handleLogin() {
