@@ -9,7 +9,7 @@ import {
   Header,
   SwitchFormText,
   Title,
-} from "@/features/auth/styles/forgot-password";
+} from "@/features/auth/styles/styles";
 
 import { Link } from "expo-router";
 
