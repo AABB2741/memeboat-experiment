@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "main": "src/index.ts",
-  "types": "src/index.ts",
   "dependencies": {
-    "@memeboat/schemas": "workspace:*"
+    "@memeboat/fake-api": "workspace:*"
   },
   "devDependencies": {
-    "@memeboat/tsconfig": "workspace:*",
-    "@memeboat/eslint-config": "workspace:*"
+    "@memeboat/eslint-config": "workspace:*",
+    "@memeboat/prettier": "workspace:*",
+    "@memeboat/tsconfig": "workspace:*"
   }
 }

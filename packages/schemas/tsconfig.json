@@ -1,0 +1,9 @@
+{
+  "extends": "@memeboat/tsconfig/library.json",
+  "compilerOptions": {
+    "strict": true,
+  },
+  "include": [
+    "*/**.ts"
+  ]
+}

@@ -238,13 +238,16 @@ importers:
 
   packages/features:
     dependencies:
-      '@memeboat/schemas':
+      '@memeboat/fake-api':
         specifier: workspace:*
-        version: link:../schemas
+        version: link:../fake-api
     devDependencies:
       '@memeboat/eslint-config':
         specifier: workspace:*
         version: link:../../config/eslint-config
+      '@memeboat/prettier':
+        specifier: workspace:*
+        version: link:../../config/prettier
       '@memeboat/tsconfig':
         specifier: workspace:*
         version: link:../../config/tsconfig
@@ -258,6 +261,9 @@ importers:
       '@memeboat/eslint-config':
         specifier: workspace:*
         version: link:../../config/eslint-config
+      '@memeboat/prettier':
+        specifier: workspace:*
+        version: link:../../config/prettier
       '@memeboat/tsconfig':
         specifier: workspace:*
         version: link:../../config/tsconfig

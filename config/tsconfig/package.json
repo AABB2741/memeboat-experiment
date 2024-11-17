@@ -4,6 +4,7 @@
   "private": true,
   "license": "MIT",
   "files": [
-    "react-native.json"
+    "react-native.json",
+    "library.json"
   ]
 }
