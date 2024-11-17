@@ -1,22 +1,20 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { View } from "react-native";
 
+import { fetchTrendingPosts } from "@memeboat/fake-api";
+import { getRandomCustomPost, PostsFeed } from "@memeboat/features";
+import type { SeededPost } from "@memeboat/schemas";
+
 import { Loading } from "@/components/loading";
-import { fetchPosts } from "@/features/posts/api/fetch-posts";
-import { PostsFeed } from "@/features/posts/components/posts-feed";
-import { getRandomCustomPost } from "@/features/posts/get-random-custom-post";
-import type { Post } from "@/schemas/post";
 
 import { styles } from "./styles";
 
 export function Feed() {
   const [isLoading, setIsLoading] = useState(false);
-  const [posts, setPosts] = useState<Post[] | null>(null);
+  const [posts, setPosts] = useState<SeededPost[] | null>(null);
 
   const loadMorePosts = useCallback(async () => {
-    const { posts: newPosts } = await fetchPosts({
-      itemsCount: 10,
-    });
+    const { posts: newPosts } = await fetchTrendingPosts();
     const customPost = await getRandomCustomPost();
 
     setPosts((prevState) => {
