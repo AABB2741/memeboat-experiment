@@ -5,9 +5,9 @@ import { Meme } from "@/components/meme";
 import {
   fetchTrendingMemes,
   type TrendingMeme,
-} from "@/features/app/memes/api/fetch-trending-memes";
+} from "@/styles/app/memes/api/fetch-trending-memes";
 
-import { Container } from "@/features/app/memes/trending.styles";
+import { Container } from "@/styles/app/memes/trending.styles";
 
 type FeedItem = TrendingMeme;
 

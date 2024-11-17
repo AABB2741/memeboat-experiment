@@ -12,7 +12,7 @@ import {
   Header,
   SwitchFormText,
   Title,
-} from "@/features/auth/styles/register";
+} from "@/styles/auth/styles/register";
 
 import googleLogo from "@/assets/google-logo.jpg";
 

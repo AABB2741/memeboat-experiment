@@ -15,7 +15,7 @@ import {
   Header,
   SwitchFormText,
   Title,
-} from "@/features/auth/styles/login";
+} from "@/styles/auth/styles/login";
 
 export default function LoginPage() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
