@@ -71,10 +71,10 @@ importers:
         version: 7.25.2
       '@memeboat/eslint-config':
         specifier: workspace:*
-        version: link:../../packages/eslint-config
+        version: link:../../config/eslint-config
       '@memeboat/tsconfig':
         specifier: workspace:*
-        version: link:../../packages/tsconfig
+        version: link:../../config/tsconfig
       '@types/react':
         specifier: ~18.2.45
         version: 18.2.79
@@ -159,10 +159,10 @@ importers:
         version: 9.2.0
       '@memeboat/eslint-config':
         specifier: workspace:*
-        version: link:../../packages/eslint-config
+        version: link:../../config/eslint-config
       '@memeboat/tsconfig':
         specifier: workspace:*
-        version: link:../../packages/tsconfig
+        version: link:../../config/tsconfig
       '@types/react':
         specifier: ~18.2.45
         version: 18.2.79
@@ -179,7 +179,7 @@ importers:
         specifier: ~5.3.3
         version: 5.3.3
 
-  packages/eslint-config:
+  config/eslint-config:
     devDependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.1.0
@@ -203,7 +203,38 @@ importers:
         specifier: 5.5.4
         version: 5.5.4
 
-  packages/tsconfig: {}
+  config/tsconfig: {}
+
+  packages/api:
+    devDependencies:
+      '@memeboat/eslint-config':
+        specifier: workspace:*
+        version: link:../../config/eslint-config
+      '@memeboat/tsconfig':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
+
+  packages/features:
+    devDependencies:
+      '@memeboat/eslint-config':
+        specifier: workspace:*
+        version: link:../../config/eslint-config
+      '@memeboat/tsconfig':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
+
+  packages/schemas:
+    dependencies:
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
+    devDependencies:
+      '@memeboat/eslint-config':
+        specifier: workspace:*
+        version: link:../../config/eslint-config
+      '@memeboat/tsconfig':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
 
 packages:
 
@@ -9941,7 +9972,7 @@ snapshots:
 
   eslint-plugin-unicorn@48.0.1(eslint@8.57.1):
     dependencies:
-      '@babel/helper-validator-identifier': 7.24.7
+      '@babel/helper-validator-identifier': 7.25.9
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.1)
       ci-info: 3.9.0
       clean-regexp: 1.0.0
