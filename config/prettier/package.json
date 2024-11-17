@@ -1,0 +1,14 @@
+{
+  "name": "@memeboat/prettier",
+  "version": "0.0.0",
+  "main": "index.js",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "@memeboat/eslint-config": "workspace:*"
+  },
+  "eslintConfig": {
+    "extends": "@memeboat/eslint-config/library"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@memeboat/fake-api",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "@memeboat/schemas": "workspace:*"
+  },
+  "devDependencies": {
+    "@memeboat/prettier": "workspace:*",
+    "@memeboat/eslint-config": "workspace:*",
+    "@memeboat/tsconfig": "workspace:*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@memeboat/eslint-config/library.js"
+    ]
+  },
+  "prettier": "@memeboat/prettier"
+}
